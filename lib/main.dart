@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_notes/views/login_view.dart';
 import 'package:my_notes/views/register_view.dart';
 import 'package:my_notes/views/verify_email_view.dart';
-import 'dart:developer' as devtools show log; //To import a specific part
+//import 'dart:developer' as devtools show log; //To import a specific part
 //we have given an alias to log, i.e. devtools. Now, we will access it as devtools.log(...)
 //import 'package:my_notes/views/login_view.dart';
 
@@ -24,7 +24,8 @@ void main() {
       home: const HomePage(),
       routes: {
         '/login/': (context) => const LoginView(),
-        '/register/': (context) => const RegisterView()
+        '/register/': (context) => const RegisterView(),
+        '/notes/': (context) => const NotesView(),
       }, //Changed to home: return RegisterView() after creating RegisterView widget
     ),
   );
@@ -111,8 +112,8 @@ Future<bool> showLogOutDialog(BuildContext context) {
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: const Text('Sign out'),
-        content: const Text('Are you sure you want to sign out?'),
+        title: const Text('Log out'),
+        content: const Text('Are you sure you want to log out?'),
         actions: [
           TextButton(
             onPressed: () {
